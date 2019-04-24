@@ -1,3 +1,13 @@
+---
+title: Setting Up Pod Security Policies
+header-includes:
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="joshrosso.com" />
+    <meta name="twitter:title" content="Setting Up Pod Security Policies" />
+    <meta name="twitter:description" content="How to setup and configure Kubernetes Clusters to use Pod Security Policies and a behind the scenes look at how they work!" />
+    <meta name="twitter:image" content="https://joshrosso.com/images/psp-banner.png" />
+---
+
 # Setting Up Pod Security Policies
 
 Kubernetes, by default, allows anything capable of creating a Pod to run a fairly privileged container that can compromise a system. Pod Security Policies protect clusters from privileged pods by ensuring the requester is authorized to create a pod as configured.
@@ -182,7 +192,7 @@ Now that everything is in place, we need to hook into Kubernetes authorization t
 
 RBAC can be a source of confusion when enabling Pod Security Policies. It determines what policy an account can use. Using a cluster-scoped `ClusterRoleBinding` we can give a service account, such as the `replicaset-controller`, access to the `restrictive` policy.  Using a namespace-scoped RoleBinding, you can enable access to the permissive policy for operating in selective namespaces such as `kube-system`. The diagram below demonstrates a hypothetical resolution path for creating a `kube-proxy` pod on behalf of the `daemonset-controller`.
 
-<center><img src="imgs/rbac-flow.png" width="700"></center>
+<center><img src="img/rbac-flow.png" width="700"></center>
 
 The flow above exists to help conceptually model policy resolution. Don't expect it to be accurate to the code/execution path.
 
