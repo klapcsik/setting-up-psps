@@ -12,7 +12,7 @@ header-includes:
 
 Kubernetes, by default, allows anything capable of creating a Pod to run a fairly privileged container that can compromise a system. Pod Security Policies protect clusters from privileged pods by ensuring the requester is authorized to create a pod as configured.
 
-<iframe width="1206" height="678" src="https://www.youtube.com/embed/dhPy3lWWhoU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><iframe width="800" height="450" src="https://www.youtube.com/embed/-t0JUMSzmV0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 ## How It Works
 
